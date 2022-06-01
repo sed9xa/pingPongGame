@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="game">
+        <div class="target__container">
+          
+        </div>
+        <p class="startMessage">Press the 'Start' button</p>
+        <div class="ball"></div>
+        <div class="plate"></div>
+      </div>
+      <div class="settings">
+        <div class="settings__container">
+          <div class="setting__buttons">
+            <button class="start setting__button">Start</button>
+            <button class="stop setting__button">
+              Stop
+            </button>
+          </div>
+          <form class="parameters">
+            <label for="ballSpeed" class="parameter__label">Ball Speed</label>
+            <input
+              type="number"
+              name="ballSpeed"
+              id="ballSpeed"
+              class="ballSpeed parameter__input"
+            />
+            <label for="plateWidth" class="parameter__label">Plate Width</label>
+            <input
+              type="number"
+              name="plateWidth"
+              id="plateWidth"
+              class="plateWidth parameter__input"
+            />
+            <label for="ballSize" class="parameter__label">Ball Size</label>
+            <input
+              type="number"
+              name="ballSize"
+              id="ballSize"
+              class="ballSize parameter__input"
+            />
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
