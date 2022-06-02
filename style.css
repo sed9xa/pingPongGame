@@ -71,14 +71,9 @@
   color: #424242;
 }
 
-.target__container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .target {
+  position: absolute;
   background-color: #795548;
   border-radius: 30%;
-  margin-top: 5px;
-  margin-left: 5px;
+  
 }
