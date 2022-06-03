@@ -65,22 +65,23 @@ let target = {
   },
 };
 let ball = {
-  left: 0,
-  top: 0,
+  left: ((plate.left + plate.width) / 2) - 15,
+  top: plate.top - plate.height,
   height: 30,
   width: 30,
   isDirectionDown: true,
   isDirectionleft: false,
+  speedTop: 30,
+  speedLeft: 30,
   isOut: function () {
-    if (ball.top > game.height) {
-      ball.top = 0;
+    if (this.top > game.height) {
+      this.ballBackOnThePlate();
       target.killAllTargets();
       stopGame();
       target.spawnTargets();
     }
   },
-  speedTop: 20,
-  speedLeft: 20,
+
   ballBounceCheck: function () {
     if (
       ball.left >= plate.left &&
@@ -117,12 +118,15 @@ let ball = {
       ) {
         ball.top = targetBottom;
         targets[i].parentNode.removeChild(targets[i]);
-        console.log("qq");
         ball.isDirectionDown = true;
       }
     }
   },
-  ballBounce: function () {},
+  ballBackOnThePlate: function () {
+    let ballElement = document.querySelector('.ball');
+    ball.top = plate.top - plate.height;
+    ball.left = ((plate.left + plate.width) / 2) - 15;
+  },
   ballMovement: function () {
     let ballElement = document.querySelector(".ball");
 
@@ -173,4 +177,5 @@ stopButton.addEventListener("click", stopGame);
 startButton.addEventListener("click", startGame);
 
 plate.plateMovement();
+ball.ballBackOnThePlate();
 target.spawnTargets();
